@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:700|Raleway:900&display=swap" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/recipe.css">
+</head>
+<body>
+    <h1>Here are your recipes</h1>
+        
+        {% for result in results.results %}
+        <section class= "results">
+
+            <div class="image"><img src="{{ result.thumbnail }}"></div>
+            <div class="title"><a href="{{ result.href }}">{{ result.title }}</a></div>
+            <div class="ingredients">{{ result.ingredients }}</div>
+
+        </section>
+        {% endfor %}
+
+    <p><a href="/">Search Again</a></p>
+    <div class="navbar">
+            <p>recipe search</p>
+            <!-- <a href="#news">News</a> -->
+          </div>
+</body>
+
+</html>
